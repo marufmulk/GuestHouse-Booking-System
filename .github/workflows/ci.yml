@@ -52,4 +52,5 @@ jobs:
           SPRING_DATASOURCE_PASSWORD: rootpassword
           SPRING_PROFILES_ACTIVE: local
           CUSTOMER_SERVICE_URL: http://localhost:8081
+          REVIEW_SERVICE_URL: http://localhost:8082
         run: ./mvnw test
