@@ -1,0 +1,30 @@
+# GuestHouse Booking System
+
+A web application for managing guest house reservations, built with Spring Boot, Thymeleaf, and Docker.
+
+## Microservices
+This application is part of an interconnected microservices architecture and works together with the **Customer Service** and **Review Service**. It communicates with the Customer Service via REST to fetch customer details and validate bookings.
+
+## Features
+* **Customers:** Register, update, and delete customers.
+* **Rooms:** Manage single and double rooms with optional extra beds.
+* **Bookings:** Create and manage reservations with automatic double-booking prevention.
+* **Search:** Find available rooms by date range and guest capacity.
+
+## Tech Stack
+* Java 21
+* Spring Boot 4.0.6
+* Spring Data JPA & Hibernate
+* MySQL
+* Thymeleaf & Bootstrap 5
+* Docker
+
+## Repository Structure Note for Docker Compose
+For `docker compose up --build` to locate all service directories correctly using the relative build contexts, ensure that all three repositories (`GuestHouse-Booking-System`, `GuestHouse-Customer-Service`, `GuestHouse-Review-Service`) and your infrastructure repository (`GuestHouse-Infrastructure`) are placed within the same parent folder like this:
+
+```text
+📁 parent-folder/
+├── 📁 GuestHouse-Infrastructure/  (contains docker-compose.yml)
+├── 📁 GuestHouse-Booking-System/
+├── 📁 GuestHouse-Customer-Service/
+└── 📁 GuestHouse-Review-Service/
