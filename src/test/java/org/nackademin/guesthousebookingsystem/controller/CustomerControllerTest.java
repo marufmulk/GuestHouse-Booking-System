@@ -20,6 +20,12 @@ class CustomerControllerTest {
     private RestTestClient restTestClient;
 
     @Test
+    void failingTestForDemo() {
+        // Deliberately failing test for CI/CD demo
+        assert false : "This test is meant to fail";
+    }
+
+    @Test
     void getCustomerPageTest() {
         restTestClient.get()
                 .uri("http://localhost:%d/customers".formatted(port))
